@@ -47,33 +47,62 @@ style bar:
 
 style vbar:
     xsize gui.bar_size
-    top_bar Frame("gui/bar/top.png", gui.vbar_borders, tile=gui.bar_tile)
-    bottom_bar Frame("gui/bar/bottom.png", gui.vbar_borders, tile=gui.bar_tile)
+    top_bar Frame(
+        "gui/bar/top.png",
+        gui.vbar_borders,
+        tile=gui.bar_tile
+    )
+    bottom_bar Frame(
+        "gui/bar/bottom.png",
+        gui.vbar_borders,
+        tile=gui.bar_tile
+    )
 
 style scrollbar:
     ysize gui.scrollbar_size
-    base_bar Frame("gui/scrollbar/horizontal_[prefix_]bar.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/scrollbar/horizontal_[prefix_]thumb.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    base_bar Frame("gui/scrollbar/horizontal_[prefix_]bar.png",
+        gui.scrollbar_borders,
+        tile=gui.scrollbar_tile
+    )
+    thumb Frame("gui/scrollbar/horizontal_[prefix_]thumb.png",
+        gui.scrollbar_borders,
+        tile=gui.scrollbar_tile
+    )
 
 style vscrollbar:
     xsize gui.scrollbar_size
-    base_bar Frame("gui/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    base_bar Frame("gui/scrollbar/vertical_[prefix_]bar.png",
+        gui.vscrollbar_borders,
+        tile=gui.scrollbar_tile
+    )
+    thumb Frame("gui/scrollbar/vertical_[prefix_]thumb.png",
+        gui.vscrollbar_borders,
+        tile=gui.scrollbar_tile
+    )
 
 style slider:
     ysize gui.slider_size
-    base_bar Frame("gui/slider/horizontal_[prefix_]bar.png", gui.slider_borders, tile=gui.slider_tile)
+    base_bar Frame("gui/slider/horizontal_[prefix_]bar.png",
+        gui.slider_borders,
+        tile=gui.slider_tile
+    )
     thumb "gui/slider/horizontal_[prefix_]thumb.png"
 
 style vslider:
     xsize gui.slider_size
-    base_bar Frame("gui/slider/vertical_[prefix_]bar.png", gui.vslider_borders, tile=gui.slider_tile)
+    base_bar Frame("gui/slider/vertical_[prefix_]bar.png",
+        gui.vslider_borders,
+        tile=gui.slider_tile
+    )
     thumb "gui/slider/vertical_[prefix_]thumb.png"
 
 
 style frame:
     padding gui.frame_borders.padding
-    background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
+    background Frame("gui/frame.png",
+        gui.frame_borders,
+        tile=gui.frame_tile
+    )
 
 
 
