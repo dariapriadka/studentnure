@@ -1,0 +1,183 @@
+
+label start:
+
+    scene nure
+
+    $vps=0
+    $kn=0
+    $pi=0
+    $itm=0
+    $kiu=0
+    $rt=0
+    $elbi=0
+    $akit=0
+    $ik=0
+    $temp=0
+    
+    $web=0
+    $front=0
+    $back=0
+    $datas=0
+    $pm=0
+    $tester=0
+    $sys=0
+    
+    $noone=0
+    
+    scene nure
+    #python:
+        #name = renpy.input(_("Как тебя зовут?"))
+    menu:
+     "Играть":
+        jump plot
+     "Пройти тесты":
+        jump test
+        
+label test:
+    menu:
+     "Какой тест хочешь пройти?"
+     "Твой факультет в ХНУРЭ?":
+        jump speciality
+     "Твоя профессия в IT":
+        jump profession
+        
+label profession:
+    
+    scene dashaback
+    "Ответь на вопросы и узнай, какая профессия в IT может тебе подойти"
+    scene laptop with Dissolve(.8)
+    menu:
+     "Твой талант?"
+     "Чинить компьютеры тех, кто 'что-то нажал и все сломалось'":
+        $sys+=1
+     "Вдохновлять людей достигать целей":
+        $pm+=1
+     "Находить недостатки в казалось бы идеальных вещах":
+        $tester+=1
+     "Программировать":
+        $front+=1
+        $back+=1
+     "Красиво рисовать":
+        $web+=1
+     "Анализировать информацию и искать закономерности":
+        $datas+=1
+        
+    scene code with Dissolve(.8)
+    menu:
+     "Твой любимый язык программирования?"
+     "Assembler":
+        $sys+=1
+     "C++/Java/C#":
+        $back+=1
+     "JavaScript":
+        $front+=1
+     "HTML/CSS :)))":
+        $web+=1
+     "R/Python":
+        $datas+=1
+     "Программирование - не мое":
+        $tester+=1
+        $pm+=1
+        
+    scene penpencils with Dissolve(.8)
+    menu:
+     "Твое знание английского можно оценить как..."
+     "Upper-Intermediate и выше":
+        $pm+=1
+        $datas+=1
+     "Intermediate":
+        $back+=1
+        $front+=1
+        $tester+=1
+     "Pre-Intermediate и ниже":
+        $web+=1
+        $sys+=1
+        
+    scene team with Dissolve(.8)
+    menu:
+     "С чем приятнее работать?"
+     "С железом":
+        $sys+=1
+     "С программным обеспечением":
+        $back+=1
+        $front+=1
+     "С дизайном":
+        $web+=1
+        $front+=1
+     "С людьми":
+        $pm+=1
+     "С информацией":
+        $datas+=1
+     
+    scene activities with Dissolve(.8)
+    menu:
+     "У тебя преобладает..."
+     "Креативность":
+        $web+=1
+        $front+=1
+     "Ответственность":
+        $pm+=1
+     "Любопытство":
+        $tester+=1
+     "Усидчивость":
+        $back+=1
+     "Изобретательность":
+        $sys+=1
+        $tester+=1
+    scene trouble with Dissolve(.8)
+    menu:
+     "Что тебе ближе?"
+     "Создавать проблемы":
+        $back+=1
+        $front+=1
+        $web+=1
+     "Искать проблемы":
+        $tester+=1
+        $datas+=1
+     "Решать проблемы":
+        $pm+=1
+        $sys+=1
+    scene algorithm with Dissolve(.8)
+    menu:
+     "Как ты обычно поступаешь?"
+     "Четко следую инструкциям":
+        $back+=1
+        $front+=1
+     "Меняю ход дейтсвий под влиянием ситуации":
+        $pm+=1
+        $datas+=1
+        $sys+=1
+     "Ненавижу четкие инструкции":
+        $tester+=1
+        $web+=1
+        
+    scene result1 with Dissolve(.8)
+      
+    if pm>=max(web, front, back, tester, sys, datas):
+       centered  "{cps=80}ТВОЙ РЕЗУЛЬТАТ: \n\n МЕНЕДЖЕР ПРОЕКТОВ{cps=80}"
+    elif web>=max(pm, front, back, tester, sys, datas):
+        centered  "{cps=80}ТВОЙ РЕЗУЛЬТАТ: \n\n ВЕБ-ДИЗАЙНЕР{cps=80}"
+    elif front>=max(pm, web, back, tester, sys, datas):
+        centered  "{cps=80}ТВОЙ РЕЗУЛЬТАТ: \n\n FRONTEND-РАЗРАБОТЧИК{cps=80}"
+    elif back>=max(pm, web, front, tester, sys, datas):
+        centered  "{cps=80}ТВОЙ РЕЗУЛЬТАТ: \n\n BACKEND-РАЗРАБОТЧИК{cps=80}"
+    elif datas>=max(pm, web, front, tester, sys, back):
+        centered  "{cps=80}ТВОЙ РЕЗУЛЬТАТ: \n\n DATA SCIENTIST{cps=80}"
+    elif sys>=max(pm, web, front, tester, back, datas):
+        centered  "{cps=80}ТВОЙ РЕЗУЛЬТАТ: \n\n СИСТЕМНЫЙ АДМИНИСТРАТОР{cps=80}"
+    elif tester>=max(pm, web, front, back, sys, datas):
+        centered  "{cps=80}ТВОЙ РЕЗУЛЬТАТ: \n\n ТЕСТИРОВЩИК{cps=80}"
+    
+    else:
+        centered  "{cps=80}К сожалению, ответы неоднозначны. Пройдите еще раз.{cps=80}"
+    scene result1
+    centered "{cps=30}Первая пара в жизни.."
+    scene 
+    "Трудно передать весь тот ужас, который я испытывал перед первой парой."
+    "{cps=30}Все было таким новым... Особенно эти огромные аудитории. Да и наш поток - человек 200, не менее."
+    "{cps=30}Первой парой у нас была высшая математика. Преподаватель показалась довольно строгой, и сходу дала нам задание: найти определитель матрицы."
+   
+label girl_plot:
+    scene result1
+    #centered "Говорят, что студентами становятся лишь после первой сессии. Сможете ли вы преодолеть все трудности первого курса, успешно совместить учебу с развлечениями, и получить почетный статус студента?"
+
